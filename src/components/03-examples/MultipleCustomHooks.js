@@ -4,7 +4,7 @@ import { useFetch } from '../../hooks/useFetch';
 
 export const MultipleCustomHooks = () => {
 
-    const { counter, increment } = useCounter(1);
+    const { counter, increment, decrement, reset } = useCounter(1);
 
     const { loading, data } = useFetch(`https://www.breakingbadapi.com/api/quotes/${counter}`);
 
@@ -30,7 +30,21 @@ export const MultipleCustomHooks = () => {
 
                 }
             </div>
+            <button
+                className='btn btn-primary' onClick={() => {
+                    if (counter <= 1) {
+                        reset();
+                    } else {
+                        decrement();
+                    }
+                }
+                }
+            >
+                Anterior
+            </button>
+            <button onClick={reset} className='btn btn-danger m-1'>Reset</button>
             <button onClick={increment} className='btn btn-primary'>Siguiente</button>
+
         </div>
     )
 }
