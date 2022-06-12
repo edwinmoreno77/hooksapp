@@ -10,7 +10,7 @@ export const MultipleCustomHooks = () => {
 
     const { author, quote } = !!data && data[0];
     return (
-        <div className='container m-5 text-center'>
+        <div className='container my-5 text-center'>
             <h1 className='my-5'>Breaking Bad Quotes</h1>
             <div>
                 {
@@ -23,7 +23,7 @@ export const MultipleCustomHooks = () => {
                         :
                         (
                             <blockquote className='blockquote text-center'>
-                                <p className='mb-3'>{quote}</p>
+                                <p className='my-3'>{quote}</p>
                                 <footer className='blockquote-footer'>{author}</footer>
                             </blockquote>
                         )
