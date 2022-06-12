@@ -30,18 +30,7 @@ export const MultipleCustomHooks = () => {
 
                 }
             </div>
-            <button
-                className='btn btn-primary' onClick={() => {
-                    if (counter <= 1) {
-                        reset();
-                    } else {
-                        decrement();
-                    }
-                }
-                }
-            >
-                Anterior
-            </button>
+            <button className='btn btn-primary' onClick={() => counter <= 1 ? reset() : decrement()}>Anterior</button>
             <button onClick={reset} className='btn btn-danger m-1'>Reset</button>
             <button onClick={increment} className='btn btn-primary'>Siguiente</button>
 
