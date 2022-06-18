@@ -12,6 +12,17 @@ export const SimpleForm = () => {
 
     const { name, email } = formState;
 
+    const handleInputChange = ({ target }) => {
+        const { name, value } = target;
+
+        setFormState({
+            ...formState,
+            [name]: value
+        });
+        // console.log(target);
+        // console.log(target.value);
+    }
+
     useEffect(() => {
         // console.log('hey!');
     }, []);
@@ -24,15 +35,6 @@ export const SimpleForm = () => {
         // console.log('hey, cambio el email!');
     }, [email]);
 
-    const handleInputChange = ({ target }) => {
-
-        setFormState({
-            ...formState,
-            [target.name]: target.value
-        });
-        // console.log(target);
-        // console.log(target.value);
-    }
 
 
 

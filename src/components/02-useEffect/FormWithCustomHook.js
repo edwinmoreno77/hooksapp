@@ -1,26 +1,19 @@
-import React, { useEffect } from 'react';
 import { useForm } from '../../hooks/useForm';
-
 
 
 export const FormWithCustomHook = () => {
 
-    const [formValues, handleInputChange] = useForm({
+    const { formState, onInputChange, name, email, password, onResetForm } = useForm({
         name: '',
         email: '',
         password: ''
     });
 
-    const { name, email, password } = formValues;
+    // const { name, email, password } = formState;
 
-    useEffect(() => {
-        // console.log('passwod completed');
-
-    }, [password]);
-
-    const handleSubmit = (e) => {
+    const onSubmit = (e) => {
         e.preventDefault();
-        console.log(formValues);
+        // console.log(formState);
     }
 
 
@@ -29,7 +22,7 @@ export const FormWithCustomHook = () => {
 
     return (
         <div className='container'>
-            <form onSubmit={handleSubmit} className='text-center'>
+            <form onSubmit={onSubmit} className='text-center'>
                 <h1 className='p-5 m-5'>FormWithCustomHook</h1>
                 <div className='form-group'>
                     <input
@@ -39,7 +32,7 @@ export const FormWithCustomHook = () => {
                         placeholder="Nombre"
                         autoComplete="off"
                         value={name}
-                        onChange={handleInputChange}
+                        onChange={onInputChange}
                     />
                     <input
                         type="text"
@@ -48,7 +41,7 @@ export const FormWithCustomHook = () => {
                         placeholder='Correo:"Pedro@gmail.com"'
                         autoComplete="off"
                         value={email}
-                        onChange={handleInputChange}
+                        onChange={onInputChange}
                     />
                     <input
                         type="password"
@@ -57,11 +50,13 @@ export const FormWithCustomHook = () => {
                         placeholder='******'
                         autoComplete="off"
                         value={password}
-                        onChange={handleInputChange}
+                        onChange={onInputChange}
                     />
                 </div>
 
                 <button type="submit" className='btn btn-primary'>Guardar</button>
+                <button onClick={onResetForm} className='btn btn-danger m-5'>Reset</button>
+
             </form>
 
         </div>

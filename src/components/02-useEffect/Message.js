@@ -8,17 +8,17 @@ export const Message = () => {
 
     useEffect(() => {
 
-        const mouseMove = (e) => {
+        const onMouseMove = (e) => {
             const coords = { x: e.x, y: e.y };
             setCoords(coords);
         }
 
 
-        window.addEventListener('mousemove', mouseMove);
+        window.addEventListener('mousemove', onMouseMove);
 
 
         return () => {
-            window.removeEventListener('mousemove', mouseMove);
+            window.removeEventListener('mousemove', onMouseMove);
         }
 
     }, [])

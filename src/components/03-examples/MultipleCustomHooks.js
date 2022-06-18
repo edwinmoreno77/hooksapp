@@ -14,7 +14,7 @@ export const MultipleCustomHooks = () => {
             <h1 className='my-5'>Breaking Bad Quotes</h1>
             <div>
                 {
-                    loading ?
+                    (loading) ?
                         (
                             <div className='alert alert-info'>
                                 Loading...
@@ -30,9 +30,9 @@ export const MultipleCustomHooks = () => {
 
                 }
             </div>
-            <button className='btn btn-primary' onClick={() => counter <= 1 ? reset() : decrement()}>Anterior</button>
-            <button onClick={reset} className='btn btn-danger m-1'>Reset</button>
-            <button onClick={increment} className='btn btn-primary'>Siguiente</button>
+            <button className='btn btn-primary' onClick={() => counter <= 1 ? reset() : decrement()} disabled={loading}>Anterior</button>
+            <button onClick={reset} className='btn btn-danger m-1' disabled={loading}>Reset</button>
+            <button onClick={() => increment()} className='btn btn-primary' disabled={loading}>Siguiente</button>
 
         </div>
     )
