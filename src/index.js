@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 // import { RealExampleRef } from './components/useRef/RealExampleRef';
 // import { FocusScreen } from './components/useRef/FocusScreen';
-import { MultipleCustomHooks } from './components/03-examples/MultipleCustomHooks';
+// import { MultipleCustomHooks } from './components/03-examples/MultipleCustomHooks';
+import { Layout } from './components/05-useLayouEffect/Layout';
 // import { FormWithCustomHook } from './components/02-useEffect/FormWithCustomHook';
 // import { SimpleForm } from './components/02-useEffect/SimpleForm';
 // import { CounterApp } from './components/01-useState/CounterApp';
@@ -11,4 +12,4 @@ import { MultipleCustomHooks } from './components/03-examples/MultipleCustomHook
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<MultipleCustomHooks />);
+root.render(<Layout />);
