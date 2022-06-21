@@ -13,6 +13,7 @@ import { Padre } from './components/07-tarea-memo/Padre';
 // import { CounterApp } from './components/01-useState/CounterApp';
 // import { CounterWithCustomHook } from './components/01-useState/CounterWithCustomHook';
 // import { HooksApp } from './HooksApp';
+import './components/08-useReducer/intro-reducer';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
