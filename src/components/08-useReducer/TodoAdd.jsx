@@ -24,7 +24,7 @@ export const TodoAdd = ({ handleNewTodo }) => {
     }
 
     return (
-        <form onClick={() => {
+        <form onSubmit={() => {
             handleNewTodo(todo)
             setTodo({
                 id: new Date().getTime(),
