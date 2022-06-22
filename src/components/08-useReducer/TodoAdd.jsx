@@ -1,44 +1,42 @@
 import React from 'react'
-import { useState } from 'react';
+import { useForm } from '../../hooks/useForm';
 
 export const TodoAdd = ({ handleNewTodo }) => {
 
-    const [todo, setTodo] = useState({
+    const { description, onInputChange, onResetForm, formState } = useForm({
         id: new Date().getTime(),
         description: '',
         done: false,
+    })
 
-    });
 
-    const { description } = todo;
+    const onNewTodo = (event) => {
 
-    const onNewTodo = ({ target }) => {
-        const { value, name } = target;
+        event.preventDefault();
+        if (description.trim().length === 0) return;
+        handleNewTodo(formState);
+        onResetForm();
 
-        setTodo({
-            ...todo,
-            [name]: value
-        });
+        //----------------------
 
-        return todo;
+        // const newTodo = {
+        //     id: new Date().getTime(),
+        //     description: description,
+        //     done: false,
+        // }
+        // handleNewTodo(newTodo);
+        // onResetForm();
     }
 
     return (
-        <form onSubmit={() => {
-            handleNewTodo(todo)
-            setTodo({
-                id: new Date().getTime(),
-                description: '',
-                done: false,
-            })
-        }}>
+        <form onSubmit={onNewTodo}>
             <input
                 type="text"
                 name="description"
                 placeholder='Ingrese una tarea'
                 className='form-control shadow'
                 value={description}
-                onChange={onNewTodo}
+                onChange={onInputChange}
             />
             <button
                 type='submit'
