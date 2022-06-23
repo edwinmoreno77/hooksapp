@@ -1,7 +1,7 @@
 import React from 'react'
 import { TodoAdd } from './TodoAdd'
 import { TodoList } from './TodoList'
-import { useTodo } from './useTodo'
+import { useTodo } from '../../hooks'
 
 
 export const TodoApp = () => {
