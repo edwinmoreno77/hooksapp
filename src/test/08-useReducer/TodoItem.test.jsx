@@ -1,5 +1,5 @@
-const { render, screen, fireEvent } = require("@testing-library/react");
-const { TodoItem } = require("../../components/08-useReducer/TodoItem");
+import { render, screen, fireEvent } from "@testing-library/react";
+import { TodoItem } from "../../components/08-useReducer/TodoItem";
 
 
 
